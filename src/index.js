@@ -1,0 +1,1 @@
+console.log("This is index.js reporting from the source folder");
