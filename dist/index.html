@@ -8,6 +8,7 @@
     <link href="your-project-dir/icon-font/lineicons.css" rel="stylesheet" />
     <link rel="stylesheet" href="../src/styles.css">
     <script src="./main.js" defer></script>
+
 </head>
 
 <body>
@@ -47,47 +48,45 @@
             <br>
             <div class="project-todos">
                 <div class="todo-container">
-                    <div class="todo-container-heading">Todo</div>
+                    <div class="todo-container-heading">
+                        <span>Todo</span>
+                        <button>+</button>
+                    </div>
                     <div class="todo-card">
-                        <div id="todo_date">19th Feb 2023</div>
+                        <div id="todo_date">
+                            <span> 19th Feb 2023</span>
+                        </div>
                         <div id="todo_title">
-                            <div class="checkbox-container"> 
-                                <input type="checkbox" id="todo_title_checkbox">
-                                <div class="todo-checkbox"></div>
-                            </div>
                             <div class="todo_title_text">
                                 Brush your teeth and scrape your tounge
                             </div>
                         </div>
                         <div id="todo_time_delete">
                             <span>9:30 - 8:30</span>
+                            <button>Done</button>
                             <button>Delete</button>
+                            <button>Edit</button>
                         </div>
                     </div>
-                    <div class="todo-card"></div>
-                    <div class="todo-card"></div>
                 </div>
                 <div class="todo-container">
-                    <div class="todo-container-heading">In Progress</div>
-                    <div class="todo-card"></div>
-                    <div class="todo-card"></div>
-                    <div class="todo-card"></div>
+                    <div class="todo-container-heading">
+                        <span>In Progress</span>
+                        <button>+</button>
+                    </div>
+                    
                 </div>
                 <div class="todo-container">
-                    <div class="todo-container-heading">Over Due</div>
-                    <div class="todo-card">lorem</div>
-                    <div class="todo-card"></div>
-                    <div class="todo-card"></div>
-                    <div class="todo-card"></div>
-                    <div class="todo-card"></div>
-                    <div class="todo-card"></div>
-
+                    <div class="todo-container-heading">
+                        <span>Completed</span>
+                        <button>+</button>
+                    </div>
                 </div>
                 <div class="todo-container">
-                    <div class="todo-container-heading">Completed</div>
-                    <div class="todo-card"></div>
-                    <div class="todo-card"></div>
-                    <div class="todo-card"></div>
+                    <div class="todo-container-heading">
+                        <span>Overdue</span>
+                        <button>+</button>
+                    </div>
                 </div>
             </div>
 

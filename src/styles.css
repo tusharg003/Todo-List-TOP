@@ -141,10 +141,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: .5em;
-    height: fit-content;
+    height: 100vh;
 }
-
 .todo-container-heading {
+    position: relative;
     background-color: var(--bg-white);
     /* flex: 1; */
     font-size: 1em;
@@ -153,6 +153,16 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: .5em;
+}
+.todo-container-heading button{
+    position: absolute;
+    right: .4em;
+    background-color:darkgray;
+    border-radius: 5px;
+    color:var(--bg-white);
+    border: none;
+    font-size: 1.1em;
+    cursor: pointer;
 }
 
 .todo-card {
@@ -167,9 +177,15 @@ body {
 }
 
 #todo_date {
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: .5em;
     font-size: .8em;
-    padding-bottom:10px;
+    color: black;
 }
+
 
 #todo_title {
     flex: 3;
@@ -180,45 +196,27 @@ body {
 }
 
 .todo_title_text {
-    flex: 5;
     display: flex;
-
-}
-
-.checkbox-container {
-    flex: 1;
-    /* display: flex; */
-    margin-top: .21em;
-    padding: 0;
-    position: relative;
-}
-
-/* Styling the checkbox for todo tasks */
-#todo_title input[type="checkbox"] {
-    visibility: hidden;
-}
-
-.todo-checkbox {
-    position: absolute;
-    top: 3px;
-    left: 10px;
-    height: 1em;
-    width: 1em;
-    background-color: transparent;
-    border: 1px solid black;
 }
 
 #todo_time_delete {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: .3em;
     font-size: .8em;
     color: black;
+}
+
+#todo_time_delete span {
+    flex: 3;
 }
 
 #todo_time_delete button {
     border: 1px solid black;
     border-radius: 20px;
+    width: 4em;
+    cursor: pointer;
 }
 
 #todo_time .todo-card-icons {
