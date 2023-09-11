@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TODO</title>
+    <link href="your-project-dir/icon-font/lineicons.css" rel="stylesheet" />
     <link rel="stylesheet" href="../src/styles.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <script src="./main.js" defer></script>
 </head>
 
@@ -50,9 +49,20 @@
                 <div class="todo-container">
                     <div class="todo-container-heading">Todo</div>
                     <div class="todo-card">
-                        <span class="material-symbols-outlined todo-card-icons">
-                            delete
-                        </span>
+                        <div id="todo_date">19th Feb 2023</div>
+                        <div id="todo_title">
+                            <div class="checkbox-container"> 
+                                <input type="checkbox" id="todo_title_checkbox">
+                                <div class="todo-checkbox"></div>
+                            </div>
+                            <div class="todo_title_text">
+                                Brush your teeth and scrape your tounge
+                            </div>
+                        </div>
+                        <div id="todo_time_delete">
+                            <span>9:30 - 8:30</span>
+                            <button>Delete</button>
+                        </div>
                     </div>
                     <div class="todo-card"></div>
                     <div class="todo-card"></div>
