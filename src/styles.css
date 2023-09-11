@@ -5,6 +5,7 @@
     --orange: rgba(250, 150, 57, 255);
     --bg-white: rgba(255, 255, 255, 255);
     --grey: rgba(238, 238, 238, 255);
+    --width-sidebar: 20vw;
 }
 
 body {
@@ -21,17 +22,21 @@ body {
 
 .left-section {
     background-color: var(--side-bar-white);
-    width: 20vw;
+    width: 18vw;
+    padding-left: 2vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    padding-left: 2em;
-    
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
 }
 
 .title {
     width: 100%;
     padding: 40px 0px;
+
 }
 
 .title>h1 {
@@ -65,14 +70,15 @@ span {
 .right-section {
     display: flex;
     flex-direction: column;
-    width: 80vw;
+    width: 100%;
+    margin-left: var(--width-sidebar);
 }
 
 .project-heading {
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
-    padding: 6em 0px 0px 2em ;
+    padding: 6em 0px 0px 2em;
     background-color: var(--orange);
 }
 
@@ -122,28 +128,44 @@ span {
 .project-todos {
     display: flex;
     background-color: var(--side-bar-white);
-    justify-content: space-around;
+    /* justify-content: space-between; */
+    gap: 1em;
     margin: 0px auto;
     width: 95%;
     height: fit-content;
-    padding: .5em 0px;
+    padding: .5em 1em;
 }
 
 .todo-container {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: .5em;
     height: fit-content;
 }
 
-.project-todo-heading {
+.todo-container-heading {
     background-color: var(--bg-white);
-    padding: .7em 7em;
+    /* flex: 1; */
+    font-size: 1em;
+    padding-left: 1em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    margin-bottom: .5em;
 }
 
 .todo-card {
+    /* flex: 1; */
     background-color: var(--grey);
     width: inherit;
     height: 10em;
-    border-radius: 10px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.todo-card-icons{
+    position: absolute;
+    top: 0;
+    right: 0;
 }
