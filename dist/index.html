@@ -10,17 +10,74 @@
 </head>
 
 <body>
-    <div class="sidebar">
-        <h1>Todo List</h1>
-        <div class="links">
-            <div class="link-items">Today</div>
-            <div class="link-items">Important</div>
-            <div class="link-items">Done</div>
+
+    <div class="content">
+        <div class="left-section">
+            <div class="title">
+                <h1><span>Todo</span>List</h1>
+                <p>Plan, Execute, Achieve!</p>
+            </div>
+            <div class="links">
+                <div class="link-items">Today</div>
+                <div class="link-items">Important</div>
+                <div class="link-items">Done</div>
+            </div>
+        </div>
+        <div class="right-section">
+
+            <div class="project-heading">
+                <p>Project Name</p>
+            </div>
+            <br>
+            <div class="project-description">
+                <div class="labels">
+                    <label for="priority">Priority:</label>
+                    <label for="date">Due Date:</label>
+                </div>
+                <div class="label-values">
+                    <select name="priority" id="priority-list">
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                    <p id="label-values-date">11/9/2023</p>
+                </div>
+            </div>
+            <br>
+            <div class="project-todos">
+                <div class="todo-container">
+                    <div class="project-todo-heading">Today</div>
+                    <div class="todo-card"></div>
+                    <div class="todo-card"></div>
+                    <div class="todo-card"></div>
+                </div>
+                <div class="todo-container">
+                    <div class="project-todo-heading">Today</div>
+                    <div class="todo-card"></div>
+                    <div class="todo-card"></div>
+                    <div class="todo-card"></div>
+                </div>
+                <div class="todo-container">
+                    <div class="project-todo-heading">Today</div>
+                    <div class="todo-card"></div>
+                    <div class="todo-card"></div>
+                    <div class="todo-card"></div>
+                    <div class="todo-card"></div>
+                    <div class="todo-card"></div>
+                    <div class="todo-card"></div>
+
+                </div>
+                <div class="todo-container">
+                    <div class="project-todo-heading">Today</div>
+                    <div class="todo-card"></div>
+                    <div class="todo-card"></div>
+                    <div class="todo-card"></div>
+                </div>
+            </div>
+
         </div>
     </div>
-    <div class="main-frame">
-        
-    </div>
+
 </body>
 
 </html>

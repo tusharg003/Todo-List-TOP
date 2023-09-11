@@ -1,4 +1,149 @@
-body{
-    background-color: aquamarine;
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Montserrat:wght@100;200;300;400;500&family=Poppins:wght@200;300;400;600&family=Roboto+Slab:wght@400;700;800&display=swap');
+
+:root {
+    --side-bar-white: rgba(249, 249, 249, 255);
+    --orange: rgba(250, 150, 57, 255);
+    --bg-white: rgba(255, 255, 255, 255);
+    --grey: rgba(238, 238, 238, 255);
 }
 
+body {
+    background-color: var(--bg-white);
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.content {
+    display: flex;
+    height: 100vh;
+}
+
+.left-section {
+    background-color: var(--side-bar-white);
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding-left: 2em;
+    
+}
+
+.title {
+    width: 100%;
+    padding: 40px 0px;
+}
+
+.title>h1 {
+    font-size: 2.5em;
+    margin: 0;
+    padding: 0;
+}
+
+.title>p {
+    padding: 0;
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 100;
+}
+
+span {
+    color: var(--orange);
+}
+
+.links {
+    width: 80%;
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+.link-items {
+    margin: 10px 0px;
+}
+
+/*right-section*/
+.right-section {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+}
+
+.project-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 6em 0px 0px 2em ;
+    background-color: var(--orange);
+}
+
+.project-heading p {
+    font-size: 2.5em;
+    font-weight: 400;
+    color: var(--bg-white);
+    margin: 0;
+    padding: 0;
+    margin-bottom: 0.5em;
+}
+
+.project-description {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    padding-left: 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.label-values>#label-values-date {
+    margin: 0;
+    padding: 0;
+}
+
+.project-description>.labels {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+.project-description>.label-values {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+    margin: 0;
+    padding: 2px;
+}
+
+/*todo section*/
+
+.project-todos {
+    display: flex;
+    background-color: var(--side-bar-white);
+    justify-content: space-around;
+    margin: 0px auto;
+    width: 95%;
+    height: fit-content;
+    padding: .5em 0px;
+}
+
+.todo-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    height: fit-content;
+}
+
+.project-todo-heading {
+    background-color: var(--bg-white);
+    padding: .7em 7em;
+}
+
+.todo-card {
+    background-color: var(--grey);
+    width: inherit;
+    height: 10em;
+    border-radius: 10px;
+}
