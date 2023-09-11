@@ -21,6 +21,7 @@ body {
 }
 
 .left-section {
+    position: relative;
     background-color: var(--side-bar-white);
     width: 18vw;
     padding-left: 2vw;
@@ -56,17 +57,42 @@ body {
     color: var(--orange);
 }
 
-.links {
+/* project link styling */
+
+.project-links-container {
+    position: absolute;
+    bottom: 5em;
     width: 80%;
-    font-size: 1.5em;
-    font-weight: 300;
 }
 
-.link-items {
-    margin: 10px 0px;
+.project-link-heading {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--grey);
+    padding-left: .4em;
+    font-size: 1.2em;
 }
+
+.project-link-heading button {
+    padding: 0px 8px;
+    /* background-color: darkgray; */
+    border-radius: 5px;
+    /* color: var(--bg-white); */
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.project-link-items {
+    font-size: 1em;
+    margin: 10px 0px;
+    padding-left: 1.4em;
+}
+
+
 
 /*right-section*/
+
 .right-section {
     display: flex;
     flex-direction: column;
@@ -74,7 +100,8 @@ body {
     margin-left: var(--width-sidebar);
 }
 
-.project-heading {
+/* Project banner */
+.project-banner {
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
@@ -82,7 +109,7 @@ body {
     background-color: var(--orange);
 }
 
-.project-heading p {
+.project-banner p {
     font-size: 2.5em;
     font-weight: 400;
     color: var(--bg-white);
@@ -91,26 +118,24 @@ body {
     margin-bottom: 0.5em;
 }
 
+/* Project description  */
 .project-description {
     display: flex;
     flex-direction: row;
     gap: 2em;
-    padding-left: 2em;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    font-size: 1em;
+    padding-left: 2.5em;
+    padding-top: 2.5em;
+    padding-bottom: 2em;
+    font-size: 1.2em;
     font-weight: 500;
+    /* background-color: aliceblue; */
 }
 
-.label-values>#label-values-date {
-    margin: 0;
-    padding: 0;
-}
 
 .project-description>.labels {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 3px;
     margin: 0;
     padding: 0;
 }
@@ -118,13 +143,34 @@ body {
 .project-description>.label-values {
     display: flex;
     flex-direction: column;
-    gap: 1.2em;
+    gap: 2px;
     margin: 0;
     padding: 2px;
+    font-size: .9em;
+}
+.priority-buttons{
+    padding: 0;
+    margin: 0;
+}
+.priority-buttons button {
+    background-color: darkgray;
+    border-radius: 10px;
+    color: var(--bg-white);
+    border: none;
+    font-size: .9em;
+    width: 5em;
+    cursor: pointer;
+    margin-bottom: 5px;
 }
 
-/*todo section*/
 
+.label-values>#label-values-date {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* project todo section*/
 .project-todos {
     display: flex;
     background-color: var(--side-bar-white);
@@ -143,6 +189,7 @@ body {
     gap: .5em;
     height: 100vh;
 }
+
 .todo-container-heading {
     position: relative;
     background-color: var(--bg-white);
@@ -154,12 +201,13 @@ body {
     align-items: center;
     margin-bottom: .5em;
 }
-.todo-container-heading button{
+
+.todo-container-heading button {
     position: absolute;
     right: .4em;
-    background-color:darkgray;
+    background-color: darkgray;
     border-radius: 5px;
-    color:var(--bg-white);
+    color: var(--bg-white);
     border: none;
     font-size: 1.1em;
     cursor: pointer;
@@ -191,7 +239,7 @@ body {
     flex: 3;
     display: flex;
     justify-content: space-between;
-    font-size: 1.5em;
+    font-size: 1.3em;
     width: 100%;
 }
 
@@ -219,11 +267,4 @@ body {
     cursor: pointer;
 }
 
-#todo_time .todo-card-icons {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: black;
-    font-size: 20px !important;
-    cursor: pointer;
-}
+/*  */

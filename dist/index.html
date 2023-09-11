@@ -19,33 +19,39 @@
                 <h1><span>Todo</span>List</h1>
                 <p>Plan, Execute, Achieve!</p>
             </div>
-            <div class="links">
-                <div class="link-items">Today</div>
-                <div class="link-items">Important</div>
-                <div class="link-items">Done</div>
+            <div class="project-links-container">
+                <div class="project-link-heading">
+                    <span>Projects</span>
+                    <button>+</button>
+                </div>
+                <div class="project-link-items">Personal</div>
+                <div class="project-link-items">Design</div>
+                <div class="project-link-items">Development</div>
+                <div class="project-link-items">Research</div>
             </div>
         </div>
         <div class="right-section">
-
-            <div class="project-heading">
+            <div class="project-banner">
                 <p>Project Name</p>
             </div>
-            <br>
+
+
             <div class="project-description">
                 <div class="labels">
                     <label for="priority">Priority:</label>
                     <label for="date">Due Date:</label>
                 </div>
                 <div class="label-values">
-                    <select name="priority" id="priority-list">
-                        <option value="high">High</option>
-                        <option value="medium">Medium</option>
-                        <option value="low">Low</option>
-                    </select>
-                    <p id="label-values-date">11/9/2023</p>
+                    <div class="priority-buttons">
+                        <button class="high-priority">High</button>
+                        <button class="mid-priority">Medium</button>
+                        <button class="low-priority">Low</button>
+                    </div>
+                    <p id="label-values-date">11th Sept 2023</p>
                 </div>
             </div>
-            <br>
+
+
             <div class="project-todos">
                 <div class="todo-container">
                     <div class="todo-container-heading">
@@ -74,7 +80,7 @@
                         <span>In Progress</span>
                         <button>+</button>
                     </div>
-                    
+
                 </div>
                 <div class="todo-container">
                     <div class="todo-container-heading">
