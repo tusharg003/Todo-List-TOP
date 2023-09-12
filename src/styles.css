@@ -68,6 +68,7 @@ body {
 .project-link-heading {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: var(--grey);
     padding-left: .4em;
     font-size: 1.2em;
@@ -87,8 +88,12 @@ body {
     font-size: 1em;
     margin: 10px 0px;
     padding-left: 1.4em;
+    cursor: pointer;
 }
 
+.project-link-items:hover {
+    background-color: var(--grey);
+}
 
 
 /*right-section*/
@@ -148,10 +153,12 @@ body {
     padding: 2px;
     font-size: .9em;
 }
-.priority-buttons{
+
+.priority-buttons {
     padding: 0;
     margin: 0;
 }
+
 .priority-buttons button {
     background-color: darkgray;
     border-radius: 10px;
@@ -187,7 +194,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: .5em;
-    height: 100vh;
+    min-height: 50vh;
 }
 
 .todo-container-heading {
