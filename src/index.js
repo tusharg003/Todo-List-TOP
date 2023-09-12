@@ -1,13 +1,12 @@
 console.log("This is index.js reporting from the source folder");
 
-import { displayDefaultProject } from "./display-proj";
-import { defaultProject } from "./default-project";
+import { displayProject } from "./dom-manipulation";
 import { createNewProject } from "./addProject";
 
 import './styles.css';
 
-defaultProject();
-displayDefaultProject();
+
+displayProject("Personal","DD/MM/YYYY");
 
 let clickEventModule = (function () {
     const addNewProjectBtn = document.querySelector('.addNewProjectBtn');

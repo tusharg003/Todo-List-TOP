@@ -138,6 +138,13 @@ body {
 
 }
 
+.modal-btns {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    width: 100%;
+}
+
 .modal-content-form button {
     border: none;
     background-color: var(--orange);
@@ -149,8 +156,12 @@ body {
     width: 30%;
     padding: 1em;
     cursor: pointer;
-
+    
 }
+.modal-content-form-cancel {
+    background-color: red !important;
+}
+
 
 /*right-section*/
 
