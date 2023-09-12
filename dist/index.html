@@ -13,6 +13,15 @@
 <body>
 
     <div class="content">
+        <div class="new-project-modal modal">
+            <form class="modal-content-form">
+                <span class="top">Add New Project</span>
+
+                </label><input type="text" id="proj-name" placeholder="Name">
+                <input type="date" id="due-date" placeholder="Date">
+                <button class="modal-content-form-submit">Submit</button>
+            </form>
+        </div>
         <div class="left-section">
             <div class="title">
                 <h1><span>Todo</span>List</h1>
@@ -21,7 +30,7 @@
             <div class="project-links-container">
                 <div class="project-link-heading">
                     <span>Projects</span>
-                    <button>+</button>
+                    <button class="addNewProjectBtn">+</button>
                 </div>
                 <div class="project-link-items">Personal</div>
                 <div class="project-link-items">Design</div>

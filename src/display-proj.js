@@ -8,3 +8,15 @@ export function displayDefaultProject() {
     const projectLinksContainer = document.querySelector(".project-links-container");
     projectLinksContainer.appendChild(projectTitleDiv);
 }
+
+export function displayNewProject(newProjectTitle, newProjectDueDate) {
+    const newProjTitleDiv = document.createElement('div');
+    newProjTitleDiv.textContent = newProjectTitle;
+    newProjTitleDiv.classList.add('project-link-items');
+    const projectLinksContainer = document.querySelector(".project-links-container");
+    projectLinksContainer.appendChild(newProjTitleDiv);
+}
+
+export function changeProjectSpace(){
+    
+}
