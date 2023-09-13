@@ -1,17 +1,8 @@
-console.log("This is index.js reporting from the source folder");
+import './styles.css'
+import { projectEventListner,selectedProject } from './creatingProjects';
+import { taskEvents } from './creatingTasks';
+console.log("page loaded")
 
-import { displayProject } from "./dom-manipulation";
-import { createNewProject } from "./addProject";
-
-import './styles.css';
-
-
-displayProject("Personal","DD/MM/YYYY");
-
-let clickEventModule = (function () {
-    const addNewProjectBtn = document.querySelector('.addNewProjectBtn');
-    addNewProjectBtn.addEventListener('click', createNewProject);
-})();
-
-
-console.log("the page is loaded");
+projectEventListner();
+selectedProject();
+taskEvents()

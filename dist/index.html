@@ -17,7 +17,7 @@
             <form class="modal-content-form">
                 <span class="top">Add New Project</span>
 
-                </label><input type="text" id="proj-name" placeholder="Name">
+                <input type="text" id="proj-name" placeholder="Name">
                 <input type="date" id="due-date" placeholder="Date">
                 <div class="modal-btns">
 
@@ -36,11 +36,38 @@
                     <span>Projects</span>
                     <button class="addNewProjectBtn">+</button>
                 </div>
+                <!-- all the projects go here! -->
                 <!-- <div class="project-link-items">Personal</div>
                 <div class="project-link-items">Design</div> -->
             </div>
         </div>
+
         <div class="right-section">
+            <div class="new-task-modal modal">
+                <form class="newtask-modal-content-form">
+                    <span class="top">Add New Task</span>
+
+                    <input type="text" id="task-name" placeholder="Task">
+                    <input type="date" id="task-due-date" placeholder="Due Date">
+                    <textarea name="" id="task-notes" cols="20" rows="10" placeholder="Add notes if any...."></textarea>
+
+                    <div class="priority_box">
+                        <input type="radio" id="priority-high" name="task_priority" value="High" />
+                        <label for="priority-high">High</label>
+
+                        <input type="radio" id="priority-mid" name="task_priority" value="Mid" />
+                        <label for="priority-mid">Mid</label>
+
+                        <input type="radio" id="priority-low" name="task_priority" value="Low" />
+                        <label for="priority-low">Low</label>
+                    </div>
+
+                    <div class="modal-btns">
+                        <button class="modal-task-cancel">Cancel</button>
+                        <button class="modal-task-submit">Add</button>
+                    </div>
+                </form>
+            </div>
             <div class="project-banner">
                 <p>Project Name</p>
             </div>
@@ -66,7 +93,7 @@
                 <div class="todo-container">
                     <div class="todo-container-heading">
                         <span>Todo</span>
-                        <button>+</button>
+                        <button id="add_new_task">+</button>
                     </div>
                     <div class="todo-card">
                         <div id="todo_date">
