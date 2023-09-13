@@ -1,3 +1,4 @@
+import { fromUnixTime } from "date-fns";
 
 function projectEventListner() {
     //event listner for creating new Project
@@ -105,15 +106,50 @@ function selectedProject() {
 
             // Add the "selected-project" class to the clicked project
             e.target.classList.add("selected-project");
+            updateTitle(e.target)
+            // updateDescription(project);
+            updateDescription(e.target.getAttribute("data-project"));
         });
 
-        // You can remove the console.log line if you don't need it
-        console.log(project.classList);
+    });
+
+}
+
+//updating the banner to current selected project
+function updateTitle(nameNode) {
+    const title = document.querySelector(".project-banner-text");
+    // console.log(nameNode.textContent); // This line logs the content of nameNode.textContent
+    title.textContent = nameNode.textContent; // This line updates the content of the element with the class "project-banner-text"
+    title.style.textTransform = "capitalize";
+}
+
+//updating the description of the project
+function updateDescription(data_project) {
+    const dueDateDom = document.getElementById("label-values-date");
+
+    projectList.forEach(project => {
+
+        if (data_project == project.dataProject) {
+            let dateString = project.dueDate;
+            let date = Date.parse(dateString);// as Datetimeformat takes date as object
+            date = formattedDate(date);
+            dueDateDom.textContent = date;
+        }
+
     });
 }
 
-
-
+//formatting the date
+function formattedDate(date) {
+    // request a weekday along with a long date
+    let options = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+    };
+    return (new Intl.DateTimeFormat("en-GB", options).format(date));
+}
 // find next data-set
 const findNextDataset = () => {
     const allProjects = document.querySelectorAll("[data-project]");

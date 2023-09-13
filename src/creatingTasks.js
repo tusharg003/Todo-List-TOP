@@ -108,10 +108,7 @@ function addTask(taskId, taskName, taskNotes, taskDueDate) {
 }
 
 //update the title of project banner
-function updateTitle(nameNode) {
-    const title = document.querySelector(".project-banner");
-    title.textContent = nameNode.textContent;
-}
+
 
 //function to find the data-project index when adding new tasks
 function findCurrentDataProject() {
@@ -121,4 +118,4 @@ function findCurrentDataProject() {
 
 // function 
 
-export { taskEvents, updateTitle, displayTasks, id, addTask, processDateData };
+export { taskEvents, displayTasks, id, addTask, processDateData };
