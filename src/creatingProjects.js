@@ -11,6 +11,9 @@ function projectEventListner() {
     const submitProjectForm = document.querySelector(".modal-content-form-submit");
     submitProjectForm.addEventListener("click", processNewProjectModalInput);
 
+    // const menuBtn = document.querySelector(".menuBtn")
+    // menuBtn.addEventListener("click", menuProject)
+
     displayProject(projectList);
 }
 
@@ -89,6 +92,22 @@ const addProject = (project_title, dataProject) => {
     newProjectDiv.setAttribute("data-project", `${dataProject}`);
     newProjectDiv.textContent = project_title;
     newProjectDiv.classList.add("project-link-items");
+
+    const menuBtn = document.createElement('button');
+    menuBtn.textContent = "...";
+    menuBtn.classList.add("menuBtn")
+    newProjectDiv.appendChild(menuBtn)
+
+    const menuModal = document.createElement('div');
+    menuModal.innerHTML = `
+        <div class="drop-down-menu-project-modal">
+        <div>Edit</div>
+        <div>Delete</div>
+        </div>
+    `
+    menuModal.classList.add("menu-modal");
+    newProjectDiv.appendChild(menuModal);
+
     newProjectContainer.appendChild(newProjectDiv);
     if (dataProject === localStorage.getItem("currentId")) {
         newProjectDiv.classList.add(".selected_project");
@@ -100,26 +119,33 @@ function selectedProject() {
     projects.forEach(project => {
         project.addEventListener("click", e => {
             // Remove the "selected-project" class from all projects
-            projects.forEach(otherProject => {
-                otherProject.classList.remove("selected-project");
-            });
+            if (
+                (e.target.tagName !== "BUTTON" && (!e.target.classList.contains("menu-modal")) &&
+                    !e.target.closest('.menu-modal')) // Check if the clicked element or its ancestors are not part of the dropdown menu
+            ) {
+                projects.forEach(otherProject => {
+                    otherProject.classList.remove("selected-project");
+                });
 
-            // Add the "selected-project" class to the clicked project
-            e.target.classList.add("selected-project");
-            updateTitle(e.target)
-            // updateDescription(project);
-            updateDescription(e.target.getAttribute("data-project"));
+                // Add the "selected-project" class to the clicked project
+                e.target.classList.add("selected-project");
+                updateTitle(e.target)
+                // updateDescription(project);
+                updateDescription(e.target.getAttribute("data-project"));
+            }
+
         });
 
     });
 
 }
 
+//selected menu btn
 //updating the banner to current selected project
 function updateTitle(nameNode) {
     const title = document.querySelector(".project-banner-text");
-    // console.log(nameNode.textContent); // This line logs the content of nameNode.textContent
-    title.textContent = nameNode.textContent; // This line updates the content of the element with the class "project-banner-text"
+    title.textContent = nameNode.firstChild.textContent; // This line updates the content of the element with the class "project-banner-text"
+
     title.style.textTransform = "capitalize";
 }
 
@@ -150,6 +176,8 @@ function formattedDate(date) {
     };
     return (new Intl.DateTimeFormat("en-GB", options).format(date));
 }
+
+
 // find next data-set
 const findNextDataset = () => {
     const allProjects = document.querySelectorAll("[data-project]");

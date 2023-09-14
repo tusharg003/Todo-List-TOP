@@ -86,15 +86,55 @@ body {
 }
 
 .project-link-items {
+    position: relative;
     font-size: 1em;
     margin: 10px 0px;
     padding-left: 1.4em;
     cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 .project-link-items:hover {
     background-color: var(--grey);
 }
+
+.menu-modal {
+    /* background-color: red; */
+    position: relative;
+    display: inline-block;
+}
+
+.drop-down-menu-project-modal {
+    display: none;
+    position: absolute;
+    /* margin-bottom: 2em; */
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.show {
+    display: block !important;
+}
+
+.menuBtn {
+    /* padding: 10px; */
+    margin: 0;
+    background: transparent;
+    font-weight: 1000;
+    position: absolute;
+    border: none;
+    right: 1em;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* .menuBtn:hover {
+    background-color: red;
+} */
+
 
 .selected-project {
     background-color: var(--grey);
