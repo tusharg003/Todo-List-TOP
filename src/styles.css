@@ -61,9 +61,11 @@ body {
 /* project link styling */
 
 .project-links-container {
+    /* background-color: red !; */
     position: absolute;
     bottom: 5em;
     width: 80%;
+    height: 30%;
 }
 
 .project-link-heading {

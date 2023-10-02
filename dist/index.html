@@ -20,8 +20,8 @@
             <form class="modal-content-form">
                 <span class="top">Add New Project</span>
 
-                <input type="text" id="proj-name" placeholder="Name">
-                <input type="date" id="due-date" placeholder="Date">
+                <input type="text" id="proj-name" placeholder="Name" value="Default Project">
+                <input type="date" id="due-date" placeholder="Date" value="2023-10-02">
                 <div class="modal-btns">
 
                     <button class="modal-content-form-cancel">Cancel</button>
@@ -51,9 +51,10 @@
                 <form class="newtask-modal-content-form">
                     <span class="top">Add New Task</span>
 
-                    <input type="text" id="task-name" placeholder="Task">
-                    <input type="date" id="task-due-date" placeholder="Due Date">
-                    <textarea name="" id="task-notes" cols="20" rows="10" placeholder="Add notes if any...."></textarea>
+                    <input type="text" id="task-name" placeholder="Task" value="Default Task">
+                    <input type="date" id="task-due-date" placeholder="Due Date" value="2023-10-02">
+                    <textarea name="" id="task-notes" cols="20" rows="10" placeholder="Add notes if any...."
+                        >Default Text </textarea>
 
                     <div class="priority_box">
                         <input type="radio" id="priority-high" name="task_priority" value="High" />
@@ -72,6 +73,7 @@
                     </div>
                 </form>
             </div>
+
             <div class="project-banner">
                 <p class="project-banner-text">Project Name</p>
             </div>
@@ -99,7 +101,7 @@
                         <span>Todo</span>
                         <button id="add_new_task">+</button>
                     </div>
-                    <div class="todo-card">
+                    <!-- <div class="todo-card">
                         <div id="todo_date">
                             <span> 19th Feb 2023</span>
                         </div>
@@ -114,7 +116,7 @@
                             <button>Delete</button>
                             <button>Edit</button>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="todo-container">
                     <div class="todo-container-heading">

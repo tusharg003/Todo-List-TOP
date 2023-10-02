@@ -1,8 +1,8 @@
 import { projectList, saveToLocalStorage } from "./creatingProjects";
 
 function taskEvents() {
-    const addTask = document.querySelector("#add_new_task");
-    addTask.addEventListener("click", showNewTaskModal);
+    const addTaskbtn = document.querySelector("#add_new_task");
+    addTaskbtn.addEventListener("click", showNewTaskModal);
 
     const cancelTaskBtn = document.querySelector(".modal-task-cancel");
     cancelTaskBtn.addEventListener("click", closeNewTaskModal);
@@ -11,7 +11,7 @@ function taskEvents() {
     submitTaskBtn.addEventListener("click", processNewTaskInput);
 
 }
-
+// console.log(projectList);
 const CreateTask = (dataProject, id, title, details, completed, date) => {
     return {
         dataProject,
@@ -24,6 +24,8 @@ const CreateTask = (dataProject, id, title, details, completed, date) => {
 }
 //show new task modal
 const showNewTaskModal = () => {
+    console.log("new task modal opened")
+
     let newTaskModal = document.querySelector('.new-task-modal');
     newTaskModal.style.display = "block";
     document.querySelector('#task-name').focus();
@@ -42,50 +44,35 @@ let id = Number(localStorage.getItem("currentId")) || defaultId;
 
 //processing data from add task
 function processNewTaskInput(e) {
+    e.preventDefault();
+
+    console.log("processing data of the new task")
+
     let taskName = document.getElementById("task-name").value;
     let taskDueDate = document.getElementById("task-due-date").value;
     let taskNotes = document.getElementById("task-notes").value;
 
     let dataProject = findCurrentDataProject();
-    let date = processDateInput(dateInput);
+    taskDueDate = processDateInput(taskDueDate);
     let taskId = id;
 
     const newTask = CreateTask(dataProject, taskId, taskName, taskNotes, false, taskDueDate);
+    console.log("dataProject:", dataProject);
     projectList[dataProject].taskList.push(newTask);
     id++;
     saveToLocalStorage();
 
-    addTask(taskId, title, details, date);
+    addTask(taskId, taskName, taskNotes, taskDueDate, dataProject);
     closeNewTaskModal();
-    e.preventDefault();
-
-}
-
-//process date input function
-function processDateData(date) {
-    let formattedDate;
-    if (!date) {
-        formattedDate = "No Due Date";
-    }
-    else {
-        formattedDate = date;
-    }
-    return formattedDate;
-}
-
-//display all tasks in the project
-function displayTasks(dataProject) {
-    projectList[dataProject].taskList.forEach((task) => {
-        addTask(task.id, task.title, task.details, task.date);
-    })
 }
 
 //create task into dom
-function addTask(taskId, taskName, taskNotes, taskDueDate) {
+function addTask(taskId, taskName, taskNotes, taskDueDate, taskProjectData) {
+
     const taskContainer = document.querySelector('.todo-container');
     const newTaskCard = document.createElement('div');
     newTaskCard.innerHTML = `
-    <div class="todo-card">
+    <div class="todo-card" data-project=${taskProjectData}>
     <div id="todo_date">
         <span> ${taskDueDate} </span>
     </div>
@@ -102,20 +89,53 @@ function addTask(taskId, taskName, taskNotes, taskDueDate) {
     </div>
     </div>
     `
-    // newTaskCard.classList.add('todo-card');
+    newTaskCard.classList.add('todo-card');
     taskContainer.appendChild(newTaskCard);
-    console.log(newTaskCard)
+    // console.log(newTaskCard);
+}
+
+function clearTaskDom() {
+    const todoCards = document.querySelectorAll('.todo-card');
+
+    // Loop through each todo-card and remove it
+    todoCards.forEach((todoCard) => {
+        todoCard.remove();
+    });
+}
+
+//process date input function
+function processDateInput(date) {
+    let formattedDate;
+    if (!date) {
+        formattedDate = "No Due Date";
+    }
+    else {
+        formattedDate = date;
+    }
+    return formattedDate;
+}
+
+//display all tasks in the project
+function displayTasks(dataProject) {
+    projectList[dataProject].taskList.forEach((task) => {
+        addTask(task.id, task.title, task.details, task.date, task.taskProjectData);
+    })
 }
 
 //update the title of project banner
 
 
-//function to find the data-project index when adding new tasks
 function findCurrentDataProject() {
-    const selected = document.querySelector(".selected");
-    return selected.dataset.project;
+    const selectedProject = document.querySelector(".selected-project");
+    console.log("Selected project element:", selectedProject);
+
+    if (selectedProject) {
+        console.log(selectedProject)
+        return selectedProject.getAttribute("data-project");
+    }
+    return null; // Return null if no project is selected
 }
 
 // function 
 
-export { taskEvents, displayTasks, id, addTask, processDateData };
+export { taskEvents, displayTasks, id, addTask, clearTaskDom, processDateInput };
